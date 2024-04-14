@@ -1,0 +1,45 @@
+{
+  "nodes": {
+    "gcc13-git": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1713054140,
+        "narHash": "sha256-55pSVrZKNKHIRhT+F9t46gWE6BQY9+iVpjZOTXzBPUQ=",
+        "ref": "releases/gcc-13",
+        "rev": "cb55b5d085833bcc6f739006f7d268a6ffe36f03",
+        "revCount": 201324,
+        "type": "git",
+        "url": "git://gcc.gnu.org/git/gcc.git"
+      },
+      "original": {
+        "ref": "releases/gcc-13",
+        "type": "git",
+        "url": "git://gcc.gnu.org/git/gcc.git"
+      }
+    },
+    "nixpkgs": {
+      "locked": {
+        "lastModified": 1713103238,
+        "narHash": "sha256-Jb+k/55nno0x1wejD1qI0O+KWwzpouwPvugG2iW/QNc=",
+        "owner": "nixos",
+        "repo": "nixpkgs",
+        "rev": "55b4d7d86fce40c1388e9d6051e43b92baddac98",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nixos",
+        "ref": "master",
+        "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
+    "root": {
+      "inputs": {
+        "gcc13-git": "gcc13-git",
+        "nixpkgs": "nixpkgs"
+      }
+    }
+  },
+  "root": "root",
+  "version": 7
+}
