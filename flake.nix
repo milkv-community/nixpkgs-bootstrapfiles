@@ -7,17 +7,13 @@
     nixpkgs.url = "github:nixos/nixpkgs/master";
   };
 
-  outputs = { gcc13-git, nixpkgs, ... }:
+  outputs = { nixpkgs, systems, gcc13-git, ... }:
     let
-      inherit (nixpkgs) lib;
-
-      # The platforms *from* which release-cross.nix compiles.
-      supportedSystems = [ "x86_64-linux" "x86_64-darwin" "aarch64-linux" ];
-      forAllSystems = lib.genAttrs supportedSystems;
       crossSystem = "riscv64-linux";
+      eachSystem = nixpkgs.lib.genAttrs (import systems);
     in
     {
-      packages = forAllSystems (system:
+      packages = eachSystem (system:
         let
           pkgs = import nixpkgs {
             inherit crossSystem system;
