@@ -5,7 +5,9 @@ _final: prev: {
     src = gccSrc;
     nativeBuildInputs = oldAttrs.nativeBuildInputs ++ [ prev.buildPackages.flex ];
     patches = prev.lib.filter
-      (patch: !prev.lib.hasSuffix "ICE-PR110280.patch" (builtins.baseNameOf patch))
+      (patch: ! builtins.elem (builtins.baseNameOf patch) [
+        "ICE-PR110280.patch"
+      ])
       oldAttrs.patches ++
     map prev.stdenv.fetchurlBoot (import ./patches);
   })));
