@@ -43,7 +43,12 @@
       packages = eachSystemPkgs
         {
           inherit crossSystem;
-          overlays = [ self.overlays.default ];
+          overlays = [
+            self.overlays.default
+            (_final: prev: {
+              inherit (prev.xthead) gcc13;
+            })
+          ];
         }
         (pkgs: (import "${nixpkgs}/pkgs/stdenv/linux/make-bootstrap-tools.nix" {
           inherit pkgs;
