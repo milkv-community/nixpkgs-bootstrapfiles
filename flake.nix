@@ -1,33 +1,52 @@
 {
-  description = "This flake provides bootstrap files with applies fixes for xthead extensions.";
+  description = "This flake provides bootstrap files with applied fixes for xthead extensions.";
 
   inputs = {
-    gcc13-git.flake = false;
-    gcc13-git.url = "git://gcc.gnu.org/git/gcc.git?ref=releases/gcc-13";
     nixpkgs.url = "github:nixos/nixpkgs/master";
+    gcc13-git = {
+      url = "git://gcc.gnu.org/git/gcc.git?ref=releases/gcc-13";
+      flake = false;
+    };
+    treefmt-nix = {
+      url = "github:numtide/treefmt-nix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
-  outputs = { gcc13-git, nixpkgs, ... }:
+  outputs = { self, nixpkgs, systems, gcc13-git, treefmt-nix, ... }:
     let
-      inherit (nixpkgs) lib;
-
-      # The platforms *from* which release-cross.nix compiles.
-      supportedSystems = [ "x86_64-linux" "x86_64-darwin" "aarch64-linux" ];
-      forAllSystems = lib.genAttrs supportedSystems;
       crossSystem = "riscv64-linux";
+      eachSystem = nixpkgs.lib.genAttrs (import systems);
+      eachSystemPkgs = overrides: f: eachSystem (system:
+        let
+          pkgs = import nixpkgs ({ inherit system; } // overrides);
+        in
+        f pkgs);
+      treefmtEval = eachSystem (system: treefmt-nix.lib.evalModule nixpkgs.legacyPackages.${system} ./treefmt.nix);
     in
     {
-      packages = forAllSystems (system:
-        let
-          pkgs = import nixpkgs {
-            inherit crossSystem system;
-            overlays = [ (import ./gcc13-overlay.nix gcc13-git) ];
-          };
-          make = import "${nixpkgs}/pkgs/stdenv/linux/make-bootstrap-tools.nix" {
-            inherit pkgs;
-          };
-        in
-        make.bootstrapFiles
-      );
+      formatter = eachSystem (system: treefmtEval.${system}.config.build.wrapper);
+
+      checks = eachSystem (system: {
+        formatting = treefmtEval.${system}.config.build.check self;
+      });
+
+      overlays = {
+        default = nixpkgs.lib.composeManyExtensions [
+          self.overlays.gcc13
+        ];
+        gcc13 = import ./overlays/gcc/gcc13 {
+          gccSrc = gcc13-git;
+        };
+      };
+
+      packages = eachSystemPkgs
+        {
+          inherit crossSystem;
+          overlays = [ self.overlays.default ];
+        }
+        (pkgs: (import "${nixpkgs}/pkgs/stdenv/linux/make-bootstrap-tools.nix" {
+          inherit pkgs;
+        }).bootstrapFiles);
     };
 }
