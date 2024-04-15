@@ -17,6 +17,11 @@
     let
       crossSystem = "riscv64-linux";
       eachSystem = nixpkgs.lib.genAttrs (import systems);
+      eachSystemPkgs = overrides: f: eachSystem (system:
+        let
+          pkgs = import nixpkgs ({ inherit system; } // overrides);
+        in
+        f pkgs);
       treefmtEval = eachSystem (system: treefmt-nix.lib.evalModule nixpkgs.legacyPackages.${system} ./treefmt.nix);
     in
     {
@@ -26,17 +31,22 @@
         formatting = treefmtEval.${system}.config.build.check self;
       });
 
-      packages = eachSystem (system:
-        let
-          pkgs = import nixpkgs {
-            inherit crossSystem system;
-            overlays = [ (import ./gcc13-overlay.nix gcc13-git) ];
-          };
-          make = import "${nixpkgs}/pkgs/stdenv/linux/make-bootstrap-tools.nix" {
-            inherit pkgs;
-          };
-        in
-        make.bootstrapFiles
-      );
+      overlays = {
+        default = nixpkgs.lib.composeManyExtensions [
+          self.overlays.gcc13
+        ];
+        gcc13 = import ./overlays/gcc/gcc13 {
+          gccSrc = gcc13-git;
+        };
+      };
+
+      packages = eachSystemPkgs
+        {
+          inherit crossSystem;
+          overlays = [ self.overlays.default ];
+        }
+        (pkgs: (import "${nixpkgs}/pkgs/stdenv/linux/make-bootstrap-tools.nix" {
+          inherit pkgs;
+        }).bootstrapFiles);
     };
 }
