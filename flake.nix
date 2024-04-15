@@ -1,5 +1,5 @@
 {
-  description = "This flake provides bootstrap files with applies fixes for xthead extensions.";
+  description = "This flake provides bootstrap files with applied fixes for xthead extensions.";
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/master";
