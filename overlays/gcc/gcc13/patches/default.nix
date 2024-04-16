@@ -9,7 +9,7 @@
   # {
   #   # Unrelated change, needed for dbcbc858c
   #   # RISC-V: add a new parameter in riscv_first_stack_step.
-  #   url = "https://github.com/gcc-mirror/gcc/commit/a782346757c54a5a3cfb9f416a7ebe3554a617d7.diff";
+  #   rev = "a782346757c54a5a3cfb9f416a7ebe3554a617d7";
   #   hash = "sha256-N67OFei6pkTrlNqw2oMafHYruBvzvVcS8OA3yH1bHWU=";
   # }
 
@@ -44,7 +44,7 @@
   # {
   #   # Unrelated change, needed for dbcbc858c
   #   # RISC-V: decouple stack allocation for rv32e w/o save-restore
-  #   url = "https://github.com/gcc-mirror/gcc/commit/a5b2a3bff8152aa34408d8ce40add82f4d22ff87.diff";
+  #   rev = "a5b2a3bff8152aa34408d8ce40add82f4d22ff87";
   #   hash = "sha256-XB/RHxd4njs2OultMjuxm3+NaKpT06JQzHOLGgq/dOQ=";
   # }
 
@@ -112,7 +112,7 @@
   {
     # IMPORTANT
     # Fix riscv_expand_conditional_move.
-    url = "https://github.com/gcc-mirror/gcc/commit/55914b016de8c8514c58eb59822677a69e44135c.diff";
+    rev = "55914b016de8c8514c58eb59822677a69e44135c";
     hash = "sha256-tqkGIR9ptruAQoCCuPRTwxb8CPBJW2GdppKlhd+rBg0=";
   }
 
@@ -145,7 +145,7 @@
   {
     # Performance patch
     # RISC-V: Optimize TARGET_XTHEADCONDMOV
-    url = "https://github.com/gcc-mirror/gcc/commit/a1806f0918c0d3612c99b6193b9703d4b4c82c21.diff";
+    rev = "a1806f0918c0d3612c99b6193b9703d4b4c82c21";
     hash = "sha256-C5yPpk6kTyyDW3cfU0SOQ9pCy8XVhMUMMjYRwdsCZMk=";
   }
 
@@ -173,7 +173,7 @@
   {
     # Cleanup patch
     # Remove unnecessary md pattern for TARGET_XTHEADCONDMOV
-    url = "https://github.com/gcc-mirror/gcc/commit/e1d2493f5912c340b50f49e4c2d928870faa172b.diff";
+    rev = "e1d2493f5912c340b50f49e4c2d928870faa172b";
     hash = "sha256-luhyj2dZ9L55vnEVMpivndzaYilJie93A0VyicLBS2M=";
   }
 
@@ -228,7 +228,7 @@
   # {
   #   # IMPORTANT?? General RISC-V platform fix. Needed for b70ad8c1.
   #   # RISC-V: Save and restore FCSR in interrupt functions to avoid program errors.
-  #   url = "https://github.com/gcc-mirror/gcc/commit/dbcbc858c71f69da76d1f36d6bb5d72f2db11eda.diff";
+  #   rev = "dbcbc858c71f69da76d1f36d6bb5d72f2db11eda";
   #   hash = "sha256-iE449jI5OzdD3NjJD7O9OT4D3P1gXvuHhL/VNMQ3Vt8=";
   # }
 
@@ -280,14 +280,14 @@
   {
     # This is in principle a performance patch, but required to make 0e25761b, d8bdc978 apply cleanly.
     # riscv: xtheadbb: Add sign/zero extension support for th.ext and th.extu
-    url = "https://github.com/gcc-mirror/gcc/commit/d05c8b016fb96cdcc445406469867b757776894e.diff";
+    rev = "d05c8b016fb96cdcc445406469867b757776894e";
     hash = "sha256-CJP2GYIzXDm4oUFxW1U539ItLlGM23yKvHlVm9dKYic=";
   }
 
   # {
   #   # IMPORTANT. This one has been backported to the gcc-13 release branch and can be dropped for gcc>=13.3.
   #   # riscv: xtheadmempair: Fix CFA reg notes
-  #   url = "https://github.com/gcc-mirror/gcc/commit/93973e4c5d3bcde1f84cad3b42a8c36e23900d19.diff";
+  #   rev = "93973e4c5d3bcde1f84cad3b42a8c36e23900d19";
   #   hash = "sha256-ggIQZ5O7bS8wvNb9pQdMABGM5RWPdf58Ve1WVk3ypps=";
   # }
 
@@ -295,7 +295,7 @@
 
   {
     # riscv: thead: Adjust constraints of th_addsl INSN
-    url = "https://github.com/gcc-mirror/gcc/commit/208e10bf8a90f49aa40152ab7fcebe8cd7c5d31a.diff";
+    rev = "208e10bf8a90f49aa40152ab7fcebe8cd7c5d31a";
     hash = "sha256-niZLiTdMbLRCQ79LLLas26q4ZD2hB+ncNUy0oJu0hYw=";
   }
 
@@ -307,7 +307,7 @@
   # {
   #   # Cleanup patch
   #   # riscv: thead: Factor out XThead*-specific peepholes
-  #   url = "https://github.com/gcc-mirror/gcc/commit/96d32c111e63b7cde38410f4e316512771c8ecff.diff";
+  #   rev = "96d32c111e63b7cde38410f4e316512771c8ecff";
   #   hash = "sha256-CjuXu9vJt2G60s6y3e1hwMDi87VIlChGxbXfhOanj2A=";
   # }
 
@@ -497,7 +497,7 @@
   {
     # Performance patch
     # riscv: xtheadbb: Enable constant synthesis with th.srri
-    url = "https://github.com/gcc-mirror/gcc/commit/af5cb06ec17780736749ed51cfc6dfad9397156c.diff";
+    rev = "af5cb06ec17780736749ed51cfc6dfad9397156c";
     hash = "sha256-jwhQBpMWcglRyFvZJjeKIR9eumB/sv+8Nw0K2gCqGzQ=";
   }
 
@@ -508,7 +508,7 @@
   {
     # Performance patch
     # riscv: Synthesize all 11-bit-rotate constants with rori
-    url = "https://github.com/gcc-mirror/gcc/commit/102dd3e8067f12beee1b8b0bec6848733d107aee.diff";
+    rev = "102dd3e8067f12beee1b8b0bec6848733d107aee";
     hash = "sha256-tanjVHf1Xq/vBWITGGHKwI42lsYp6OEKUZ26WbOAE+o=";
   }
 
@@ -531,13 +531,13 @@
 
   {
     # riscv: thead: Fix mode attribute for extension patterns
-    url = "https://github.com/gcc-mirror/gcc/commit/0e25761b373f075a41d43b9462366a653dbf1121.diff";
+    rev = "0e25761b373f075a41d43b9462366a653dbf1121";
     hash = "sha256-u38nFdQWUvchckcxDzOyZPSmBb7Fo2hAl5zs9JOhaaA=";
   }
   {
     # IMPORTANT
     # riscv: xtheadbb: Fix extendqi<SUPERQI> insn
-    url = "https://github.com/gcc-mirror/gcc/commit/d8bdc978dc9cd4a6210997edacedb954375af70d.diff";
+    rev = "d8bdc978dc9cd4a6210997edacedb954375af70d";
     hash = "sha256-DN/kV48Vk0Tvz6RzjLCFpEFOaRJLM23ToEQnGF0vilw=";
   }
 
@@ -557,7 +557,7 @@
 
   {
     # RISC-V: Add Types to Un-Typed Thead Instructions
-    url = "https://github.com/gcc-mirror/gcc/commit/316d57da5bb9205b946afc56d78582fee874e4b5.diff";
+    rev = "316d57da5bb9205b946afc56d78582fee874e4b5";
     hash = "sha256-eqx7DW2CMBYE749mA+B05gCSZ/cA0/7OSQ6BmEEaTY4=";
   }
 
@@ -655,7 +655,7 @@
 
   {
     # THead: Fix missing CFI directives for th.sdd in prologue.
-    url = "https://github.com/gcc-mirror/gcc/commit/578aa2f80056175b902671b30cc77e38945e3ba4.diff";
+    rev = "578aa2f80056175b902671b30cc77e38945e3ba4";
     hash = "sha256-Wt7sa/jJ66NSyzjTVsSO675M4CSEaPawMFLQ1y+lXWo=";
   }
 
@@ -746,7 +746,7 @@
   # {
   #   # IMPORTANT??
   #   # RISC-V: XTheadMemPair: Fix missing fcsr handling in ISR prologue/epilogue
-  #   url = "https://github.com/gcc-mirror/gcc/commit/b70ad8c19aa8be672cdba6afe9cbab2d1254d127.diff";
+  #   rev = "b70ad8c19aa8be672cdba6afe9cbab2d1254d127";
   #   hash = "sha256-syy+IsSbwinbVIexlehdAzcAC5M/zXtD2raGfXtNuoY=";
   # }
 
@@ -974,7 +974,7 @@
 
   # {
   #   # RISC-V: THEAD: Fix improper immediate value for MODIFY_DISP instruction on 32-bit systems.
-  #   url = "https://github.com/gcc-mirror/gcc/commit/4ac00b7c809ca70775a04708863b9101d94af5c2.diff";
+  #   rev = "4ac00b7c809ca70775a04708863b9101d94af5c2";
   #   hash = "sha256-RueNREpsztTvypsZic+L+p+r8/9rCZKnCoAXjcg79GQ=";
   # }
 
@@ -1048,4 +1048,6 @@
   # 6e7e5943619a2c20d93fc7089c885483786558bc: RISC-V: Fix Werror=sign-compare in riscv_validate_vector_type
   # c9500083073ff5e0f5c1c9db92d7ce6e51a62919: Regenerate opt.urls
   # 02cc8f3e68f9af96d484d9946ceaa9e3eed38151: RISC-V: Add VLS to mask vec_extract [PR114668].
+  # 46d914d0e0b7e982627edb285c41c67cc4e640ac: LoongArch: Add indexes for some compilation options.
+  # 6e925ba0a8b9619ed789a456b087755b488d66f1: optimize Zicond conditional select cases.
 ]

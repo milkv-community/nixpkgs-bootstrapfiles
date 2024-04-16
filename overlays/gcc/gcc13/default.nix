@@ -9,6 +9,11 @@ _final: prev: {
         "ICE-PR110280.patch"
       ])
       oldAttrs.patches ++
-    map prev.stdenv.fetchurlBoot (import ./patches);
+    map
+      ({ rev, hash }: prev.stdenv.fetchurlBoot {
+        url = "https://github.com/gcc-mirror/gcc/commit/${rev}.diff";
+        inherit hash;
+      })
+      (import ./patches);
   })));
 }
