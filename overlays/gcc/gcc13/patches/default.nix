@@ -4,7 +4,11 @@
 #     $(git merge-base releases/gcc-13 master)..master gcc/config/riscv
 
 [
-  # 0ccf520d349a82dafca0deb3d307a1080e8589a0: RISC-V: Optimze the reverse conditions of rotate shift
+  {
+    # RISC-V: Optimze the reverse conditions of rotate shift
+    rev = "0ccf520d349a82dafca0deb3d307a1080e8589a0";
+    hash = "sha256-zs/2JhRoyAOCNw74LMvSuGfP6DoKL/zG4YMgQe2lcZc=";
+  }
 
   # {
   #   # Unrelated change, needed for dbcbc858c
@@ -15,19 +19,35 @@
 
   # 60524be1e3929d83e15fceac6e2aa053c8a6fb20: RISC-V: optimize stack manipulation in save-restore
   # 3f0f4e0fa0b1f9c6217bf5018df4d0836cad84c7: RISC-V: make the stack manipulation codes more readable.
-  # 9874ceed091a0ce17b23d8d77b5bf90b8902a3c0: Add TARGET_ZBKB to the condition of bswapsi2, bswapdi2 and rotr<mode>3 patterns
+  {
+    # Add TARGET_ZBKB to the condition of bswapsi2, bswapdi2 and rotr<mode>3 patterns
+    rev = "9874ceed091a0ce17b23d8d77b5bf90b8902a3c0";
+    hash = "sha256-VD1IkCrG7KghM7dFCka1ciFqM+Ryt2kicstI+hKOogs=";
+  }
   # 9fdea28d6ace8c8e5ac64a55685d310ba8dfa3cf: RISC-V: Support 128 bit vector chunk
   # a2d12abedc89a9439fd6aadc38730fdadca0684f: RISC-V: Fix wrong check of register occurrences [PR109535]
   # 7b206ae7f17455b69349767ec48b074db260a2a7: RISC-V: Fix RVV register order
-  # 07e2576d6f344acab338deeb051845c90c1cf6a3: [PR target/108248] [RISC-V] Break down some bitmanip insn types
+  {
+    # [PR target/108248] [RISC-V] Break down some bitmanip insn types
+    rev = "07e2576d6f344acab338deeb051845c90c1cf6a3";
+    hash = "sha256-Nft5GWu0A8zB4E2D1NyxE+tfNm4MfTdapE43kUeqbKA=";
+  }
   # d51f2456ee51bd59a79b4725ca0e488c25260bbf: RISC-V: Add local user vsetvl instruction elimination [PR109547]
-  # 98d66b204932e343bbf940990914b949e8fccbd5: riscv: Fix <bitmanip_insn> fallout.
+  {
+    # riscv: Fix <bitmanip_insn> fallout.
+    rev = "98d66b204932e343bbf940990914b949e8fccbd5";
+    hash = "sha256-QPkvC650VXZ0oQPGF+s8BOs/cz9ju2TcndLpDocNvEo=";
+  }
   # d06e9264b0192c2c77e07d7fb0fe090efcb510c0: RISC-V: Defer vsetvli insertion to later if possible [PR108270]
   # 4eae76d10433b12bdb6944c2b3be818ccc3b5986: RISC-V: Optimize fault only first load
   # c5a1fa59ae3f44059a79086cbc506800d4149b69: RISC-V: Add function comment for cleanup_insns.
   # ff8f95449350372b584cfcd28a7d9d71f52eea50: RISC-V: Eliminate redundant vsetvli for duplicate AVL def
   # 0530254413f8d356805442f659c6d2921739284d: riscv: relax splitter restrictions for creating pseudos
-  # 392200f807fe2ee377ecc451ff75894b89335c33: avoid splitting small constants in bcrli_nottwobits patterns
+  {
+    # avoid splitting small constants in bcrli_nottwobits patterns
+    rev = "392200f807fe2ee377ecc451ff75894b89335c33";
+    hash = "sha256-oPMc6w1v4nBq8e36qFP11NfLH1Yw8DRSJ9qg1CkF2m4=";
+  }
   # 2fb7df82b8edd64ea31417592619c4cee00b05bc: RISC-V: Add auto-vectorization compile option for RVV
   # a010f0e08501b267ecb925ff88450f58e01dd991: RISC-V: Fine tune gather load RA constraint
   # 4f9eac2f262dfe938edf52045ef3fcdcf925af2d: RISC-V: Fix redundant vmv1r.v instruction in vmsge.vx codegen
@@ -37,9 +57,21 @@
   # f797260adaf52bee0ec0e16190bbefbe1bfc3692: RISCV: Inline subword atomic ops
   # 2a26872984c109a98d0ad733b0c68c3e1648ec86: RISC-V: Fix sync.md and riscv.cc whitespace errors
   # 8b84d87969ef2443516a79a80c22d2b6dba04630: RISC-V: Allow RVV VMS{Compare}(V1, V1) simplify to VMCLR
-  # 1966741378d5f456d0245960fa09074b6320b4d6: RISC-V: Eliminate redundant zero extension of minu/maxu operands
-  # d9df45a66b2c8f543106be0a2387bbe6195b00a6: RISC-V: Added support clmul[r,h] instructions for Zbc extension.
-  # 065be0ffbcd676b635d492f4679e635b6ece4fe4: RISC-V: Add divmod expansion support
+  {
+    # RISC-V: Eliminate redundant zero extension of minu/maxu operands
+    rev = "1966741378d5f456d0245960fa09074b6320b4d6";
+    hash = "sha256-Iz30LLpZEIHtKHDYeCssUNy/G8zKxtsrH/ODxktvXFU=";
+  }
+  {
+    # RISC-V: Added support clmul[r,h] instructions for Zbc extension.
+    rev = "d9df45a66b2c8f543106be0a2387bbe6195b00a6";
+    hash = "sha256-/PZyX27vMJKlcWEjYvDSfqqDIBcvn6tVC3t50bzaigE=";
+  }
+  {
+    # RISC-V: Add divmod expansion support
+    rev = "065be0ffbcd676b635d492f4679e635b6ece4fe4";
+    hash = "sha256-6CjLYcOjMTuCJ2/0UUJtgFxvxuWKWjOaT1oGPgZEGHM=";
+  }
 
   # {
   #   # Unrelated change, needed for dbcbc858c
@@ -100,15 +132,30 @@
   # 01d62e9b6c3e9fd3132f1616843103ccf81778ed: RISC-V: Add rounding mode enum for fixed-point intrinsics
   # 24bd7168112f96e363cacaf593b3ac0c38c238f9: RISC-V: Introduce rounding mode operand into fixed-point intrinsics
   # e682d300261c0f2c8a5cc51151adabfe98e1006c: RISC-V: Add mode switching target hook to insert rounding mode config for fixed-point instructions
-  # 6da6ed95c9ca247d405da3dfb737b743686fe5e6: RISC-V: Remove masking third operand of rotate instructions
+  {
+    # RISC-V: Remove masking third operand of rotate instructions
+    rev = "6da6ed95c9ca247d405da3dfb737b743686fe5e6";
+    hash = "sha256-0qb7K9J/xG9DjsWw3mO6MsCxfE+Y/7qcD+I1VZnw2+g=";
+  }
   # 7b0073c6a4c21a558936c06a06ab1c6def9769ae: RISC-V: Remove trailing spaces on lines.
   # 9907413a3a6aa30a4a6db4756c445b40f04597f3: gcc/config/*: use _P() defines from tree.h
   # 64d6a4dfd983377c6a91f1711ead71dc59aaefac: RISC-V: Allow more loading of const vectors.
   # c104ef4b5eb1f781bbef953e3c282ef1ca94c4f1: RISC-V: improve codegen for large constants with same 32-bit lo and hi parts [2]
-  # 259b4b7d349dd3fd560144bd4617f526458b45dc: RISC-V: Remove masking third operand of rotate instructions
-  # 9000da00dd70988f30d43806bae33b22ee6b9904: RISC-V: Fix CTZ unnecessary sign extension [PR #106888]
-  # 31cc55f4ff32475f8552205cbf341d4af8bb4fb7: Add bext pattern for ZBS
-
+  {
+    # RISC-V: Remove masking third operand of rotate instructions
+    rev = "259b4b7d349dd3fd560144bd4617f526458b45dc";
+    hash = "sha256-SyFZm4cXjUj+FhrFI3qAcaZOWqImuXBVaFSkMlpOCHQ=";
+  }
+  {
+    # RISC-V: Fix CTZ unnecessary sign extension [PR #106888]
+    rev = "9000da00dd70988f30d43806bae33b22ee6b9904";
+    hash = "sha256-2qWYVYhzVum5W+xjcZj3wqojiOLjMgARa+iEStIESfk=";
+  }
+  {
+    # Add bext pattern for ZBS
+    rev = "31cc55f4ff32475f8552205cbf341d4af8bb4fb7";
+    hash = "sha256-KUyrtXkUr/KJWxZF5rv0P7Qhz71T95vtGKuFOOzdSZo=";
+  }
   {
     # IMPORTANT
     # Fix riscv_expand_conditional_move.
@@ -194,7 +241,11 @@
   # 631e86b7adb55fb5ce418ce4cb5a59a1a3a6faa7: RISC-V: Support RVV VLA SLP auto-vectorization
   # ae6c2d1edf289a8a04557e8fbfd4a61841c53345: riscv: Fix insn cost calculation
   # 7f26e76c9848aeea9ec10ea701a6168464a4a9c2: riscv: Fix scope for memory model calculation
-  # 99bfdb072e67fa3fe294d86b4b2a9f686f8d9705: RISC-V: Eliminate extension after for *w instructions
+  {
+    # RISC-V: Eliminate extension after for *w instructions
+    rev = "99bfdb072e67fa3fe294d86b4b2a9f686f8d9705";
+    hash = "sha256-IHh+rgdFF97O0Uc9jhlE0tod+GRBIm35KiyUfEA6jX4=";
+  }
   # 7f4644f8c683b6a60462a5e10ab67a0598945c37: RISC-V: Fix one warning of frm enum.
   # cb33116afc2da3024cffdeed5d90b69c3820017b: RISC-V: Refactor requirement of ZVFH and ZVFHMIN.
   # 55dcf277b5dc10702593b7c2fc0fc63917ce14f7: RISC-V: Enable select_vl for RVV auto-vectorization
@@ -338,8 +389,16 @@
   # aa1e2d543869a07580f9b2112f2d7367f83a6753: [committed][RISC-V] Fix minor issues in diagnostic message
   # ad0dde0af107aaf6a91e37f3aa31249e34df6ce0: RISC-V: Fixbug for fsflags instruction error using immediate.
   # adbac207e917e42dac7b30553d91f3bd1196bbee: RISC-V: Fix vector tuple intrinsic
-  # aee2817ecd261ac2fd2717a2a36db81906ff2346: [PATCH 1/5] [RISC-V] Recognize Zicond extension
-  # 74290c664d1d4c067a996253fe505555ec671668: [PATCH 2/5] [RISC-V] Generate Zicond instruction for basic semantics
+  {
+    # [PATCH 1/5] [RISC-V] Recognize Zicond extension
+    rev = "aee2817ecd261ac2fd2717a2a36db81906ff2346";
+    hash = "sha256-GzCW/NbU/LiWz13lJjv2Ol2/eUT6RJaL4thWLbvYJQc=";
+  }
+  {
+    # [PATCH 2/5] [RISC-V] Generate Zicond instruction for basic semantics
+    rev = "74290c664d1d4c067a996253fe505555ec671668";
+    hash = "sha256-150zgPlzAbYRDJgPQRiWpIA+uCKhN6yFbilwpK+YTDc=";
+  }
   # cdc65458334faad1a2f00cf17e64e39b25d697ca: RISC-V: Fix uninitialized and redundant use of which_alternative
   # d0ae71c26ab9e383768160ea266f56db2e2ae43c: RISC-V: Remove unnecessary vread_csr/vwrite_csr intrinsic.
   # 33b153ff521e2f33acf7d076f8625d85319b731d: RISC-V: Enable basic VLS modes support
@@ -350,18 +409,38 @@
   # 5a770748e8eea38a4ed1f3c4dd8d807aa1640536: RISC-V: Drop unused variable
   # 85699f1d23aa71cbfeb13d72ec987e5217d410c2: RISC-V: Support RVV VFSUB and VFRSUB rounding mode intrinsic API
   # 46a508ec7aee5038cc0a8800b756838ebef7f6d2: RISC-V: Support CALL for RVV floating-point dynamic rounding
-  # e15d0b6680d10d7666195e9db65581364ad5e5df: [PATCH 3/5] [RISC-V] RISC-V Conditional Move costing [was:Generate Zicond instruction for select pattern with condition eq or neq to 0]
-  # 2d73f2eb80caf328bc4dd1324d475e7bf6b56837: [committed] [RISC-V] Avoid sub-word mode comparisons with Zicond
-  # 5b501863ac7da57858fdd464dfb7a776143f22a2: [PATCH 3/5] [RISC-V] Cost model for Zicond.
+  {
+    # [PATCH 3/5] [RISC-V] RISC-V Conditional Move costing [was:Generate Zicond instruction for select pattern with condition eq or neq to 0]
+    rev = "e15d0b6680d10d7666195e9db65581364ad5e5df";
+    hash = "sha256-fHv5XNZfZ+fDDClSlPXqmcahYgKjvXzjM/iUR4w+qfs=";
+  }
+  {
+    # [committed] [RISC-V] Avoid sub-word mode comparisons with Zicond
+    rev = "2d73f2eb80caf328bc4dd1324d475e7bf6b56837";
+    hash = "sha256-FWFOKMZLPhC2n9ZSkTbaTOnqgCqj5cfRXK2EwvF+4Po=";
+  }
+  {
+    # [PATCH 3/5] [RISC-V] Cost model for Zicond.
+    rev = "5b501863ac7da57858fdd464dfb7a776143f22a2";
+    hash = "sha256-YIrydvsJQLcxXJUVMrGxW+PQbZoGkvWPQnrU5mUqjXs=";
+  }
   # 21c2815605fb0ec43ea65b1104990cf03248013e: RISC-V: Support RVV VFWADD rounding mode intrinsic API
-  # 1d5bc3285e8a115538442dc2aaa34d2b509e1f6e: [committed][RISC-V] Fix 20010221-1.c with zicond
+  {
+    # [committed][RISC-V] Fix 20010221-1.c with zicond
+    rev = "1d5bc3285e8a115538442dc2aaa34d2b509e1f6e";
+    hash = "sha256-Ql4znGXA5CIAoHtWN/o0UNN5A3pyP8uZCsOo1Rs5efs=";
+  }
   # cba9db950371e810e32e75425707beceb85bb0f0: RISC-V: Support RVV VFWSUB rounding mode intrinsic API
   # 1b53748c61a8b6489ca9a56a25037131335d3cc6: RISC-V: Remove redudant extern declaration in function base
   # 373600087df596b26c10d18eb0c5082c2788808b: RISC-V: Support RVV VFMUL rounding mode intrinsic API
   # 39663298b5934831a0125e12f113ebd83248c3be: RISCV: Add -m(no)-omit-leaf-frame-pointer support.
   # 93fd44fde638a4d5fc34547c25aa02f346170430: RISC-V: Fix one comment for binop_frm insn
   # d61efa3cd3378be38738bfb5139925d1505c1325: [committed][RISC-V] Remove errant hunk of code
-  # 9e3fd332959930efd3cabf222afbac910507d2f3: [PATCH 3/5] [RISC-V] Generate Zicond instruction for select pattern with condition eq or neq to 0
+  {
+    # [PATCH 3/5] [RISC-V] Generate Zicond instruction for select pattern with condition eq or neq to 0
+    rev = "9e3fd332959930efd3cabf222afbac910507d2f3";
+    hash = "sha256-ar2ubIr7qc07fRwMVOYOateEOmuHz//fcKltXAI6TTA=";
+  }
   # b7ab3938c638bf5aacfe926ed19aba1627702a71: RISC-V: Support RVV VFDIV and VFRDIV rounding mode intrinsic API
   # dd03fb9962e4776286d7654df09549c0e712465e: RISC-V: Support RVV VFWMUL rounding mode intrinsic API
   # 51e5a5cefb11d8a7b2216e866abcc225ba16d127: RISC-V: Support RVV VFMACC rounding mode intrinsic API
@@ -372,9 +451,21 @@
   # b87a4739a4c043e8063f2955a706b949dcc20dae: Revert "RISC-V: Support RVV VFMSAC rounding mode intrinsic API"
   # 7a6b4d87d8aa50ef644414fe224c3540c540c2d4: Revert "RISC-V: Support RVV VFNMACC rounding mode intrinsic API"
   # 2d2f090e67b26457596e7d5aabe629e3da58db94: Revert "RISC-V: Support RVV VFMACC rounding mode intrinsic API"
-  # 4e87c953d16377457b31b65b6c3268d932e462ab: [PATCH v3] [RISC-V] Generate Zicond instruction for select pattern with condition eq or neq to 0
-  # 8ae83274d8cc60547e8c92a41a4f4716b045f57a: [committed] [RISC-V] Handle more cases in riscv_expand_conditional_move
-  # 18c453f0e633abb9b317947b011ec6e07780fba8: [committed][RISC-V]Don't reject constants in cmov condition
+  {
+    # [PATCH v3] [RISC-V] Generate Zicond instruction for select pattern with condition eq or neq to 0
+    rev = "4e87c953d16377457b31b65b6c3268d932e462ab";
+    hash = "sha256-1VOVSqRGZfFZg7hZ8uneFsDK7dkBhG4jKeI4mOUD6KU=";
+  }
+  {
+    # [committed] [RISC-V] Handle more cases in riscv_expand_conditional_move
+    rev = "8ae83274d8cc60547e8c92a41a4f4716b045f57a";
+    hash = "sha256-VTcFvi09ahoF0/WKpvR0qBQkn0GNNNE0/WYjqbneiB4=";
+  }
+  {
+    # [committed][RISC-V]Don't reject constants in cmov condition
+    rev = "18c453f0e633abb9b317947b011ec6e07780fba8";
+    hash = "sha256-4hmM6P8rgE6NWAC2kWuva50hj570Um9NB9JFGSAGVWs=";
+  }
   # 9cba4fce837b9fa0b52af64de0bac60ea1906900: RISC-V: Support VLS basic operation auto-vectorization
   # 99e47791a901e71eb2475e3987c51d07f37430a5: RISC-V: Support VLS shift vectorization
   # 8f4d2a4c984f168b8444672aa8f4a103e845dfbf: RISC-V: Support neg VLS auto-vectorization
@@ -430,7 +521,11 @@
   # 86d80395cf3c8832b669135b1ca7ea8258790c19: RISC-V: Revert the convert from vmv.s.x to vmv.v.i
   # 3709ca091bec43ee3203b96146585652c5d84728: RISC-V: Add the missed half floating-point mode patterns of local_pic_load/store when only use zfhmin or zhinxmin
   # 39491441a3aca7725d5a6dfeea4b01229d30c899: [RISCV][committed] Remove spurious newline in ztso sequence
-  # 36788c9ff6d044210ddee23154306ba54bc3087b: [PATCH] RISC-V: Add Types to Missing Bitmanip Instructions
+  {
+    # [PATCH] RISC-V: Add Types to Missing Bitmanip Instructions
+    rev = "36788c9ff6d044210ddee23154306ba54bc3087b";
+    hash = "sha256-6yUljfdejeF0tlHkGrJg15ayRiy2ac+QNZON9u9Az8s=";
+  }
   # 1d17e3d66736cc8d875bf02530f3f6aa498f0d09: RISC-V: Support RVV VFWREDUSUM.VS rounding mode intrinsic API
   # 47f95bc4be4eb14730ab3eaaaf8f6e71fda47690: RISC-V: Add multiarch support on riscv-linux-gnu
   # 3571cc93511b39f7a403fe5eab0e316cd7e86220: RISC-V: output Autovec params explicitly in --help ...
@@ -440,7 +535,11 @@
   # 29487eb237b893c673e9ecc6409b175e22792f13: RISC-V: Fix VTYPE fuse rule bug
   # 3beef5e6b5b12b5c90040c8485f1836e2dd6cf83: RISC-V: Fix potential ICE of global vsetvl elimination
   # 92f2ec417c57e980b92b8966226fc2bfbf042af8: RISC-V: Add conditional unary neg/abs/not autovec patterns
-  # 18befd6f050e70f11ecca1dd58624f0ee3c68cc7: [PATCH] RISC-V:add a more appropriate type attribute
+  {
+    # [PATCH] RISC-V:add a more appropriate type attribute
+    rev = "18befd6f050e70f11ecca1dd58624f0ee3c68cc7";
+    hash = "sha256-4lIR1nbgG6qf5LXTBPJ2TPHYwUoiBmINXdCdZWcY2GU=";
+  }
   # 0345152f922c3a58ae0a8ee014e37dcfab35592c: RISC-V: Refactor RVV class by frm_op_type template arg
   # 1c51805e2468bc10057bc0f2fc12fab909d21d04: RISC-V: Fix one typo in autovec.md pattern comment
   # b6ba0cc9339f2cc81398863ae779daa6c8853ad6: RISC-V: Allow const 17-31 for vector shift.
@@ -462,7 +561,11 @@
   # 4b70c7c849331d45c0d6a1a4e1cf96b103be9aa6: RISC-V: Add Types to Un-Typed Vector Instructions
   # 6e23440b5df4011bbe1dbee74d47641125dd7d16: RISC-V: generate builtin macro for compilation with strict alignment
   # fce74ce2535aa3b7648ba82e7e61eb77d0175546: RISC-V: Added zvfh support for zfa extensions.
-  # 94b950df6f8c46925799f642e5c44f42638f2b5e: RISC-V: Use splitter to generate zicond in another case
+  {
+    # RISC-V: Use splitter to generate zicond in another case
+    rev = "94b950df6f8c46925799f642e5c44f42638f2b5e";
+    hash = "sha256-YG7lCW6m6t8ya+fhj96QiKzLEAc9k5CfciBuYMDZj8M=";
+  }
   # 260f743aa476abce8f88cceaca12abcb8115b02f: RISC-V: Enable movmisalign for VLS modes
   # 7accc6208befae77699a56f67a94da1e247ed069: RISC-V: Make sure we get VL REG operand for VLMAX vsetvl
   # 3d1d3132b9d4dc8b6069ad95dad624371124f297: RISC-V: support cm.push cm.pop cm.popret in zcmp
@@ -492,8 +595,11 @@
   # 509c10a62546b9b3430040e455b7258322a024e6: RISC-V: Export functions as global extern preparing for dynamic LMUL patch use
   # a7b048c0f42198a0f8d4244f1bd25211cf48383f: RISC-V: Support FP SGNJ autovec for VLS mode
   # fba0f47e4617e164716d3bce587fc6948088e225: RISC-V: Emit .note.GNU-stack for non-linux target as well
-  # e87212ead5e9f36945b5e2d290187e2adca34da5: RISC-V: zicond: Fix opt2 pattern
-
+  {
+    # RISC-V: zicond: Fix opt2 pattern
+    rev = "e87212ead5e9f36945b5e2d290187e2adca34da5";
+    hash = "sha256-MqDOTiQA8xOQ4nGJCQv+yz9shNLNcO5ACc44Dxehkm0=";
+  }
   {
     # Performance patch
     # riscv: xtheadbb: Enable constant synthesis with th.srri
@@ -503,16 +609,22 @@
 
   # c85db606d46774283ca4ec037dc3051719828f41: RISC-V: Add Types to Un-Typed Pic Instructions
   # decbf9ec81f33052be12296b89cd86ea65ae10da: RISC-V: Add Types to Un-Typed Risc-v Instructions
-  # fbc01748ba46eb26074388a8fb7b44d25a414a72: RISC-V: Expose bswapsi for TARGET_64BIT
-
+  {
+    # RISC-V: Expose bswapsi for TARGET_64BIT
+    rev = "fbc01748ba46eb26074388a8fb7b44d25a414a72";
+    hash = "sha256-9ixVDfiJr2tOz5o4X5BVjBjgx7ufeY4ikXDNwzcTPGs=";
+  }
   {
     # Performance patch
     # riscv: Synthesize all 11-bit-rotate constants with rori
     rev = "102dd3e8067f12beee1b8b0bec6848733d107aee";
     hash = "sha256-tanjVHf1Xq/vBWITGGHKwI42lsYp6OEKUZ26WbOAE+o=";
   }
-
-  # ce65641354d98fc80912d5516b7fea87c344c2cc: RISC-V: Fix Zicond ICE on large constants
+  {
+    # RISC-V: Fix Zicond ICE on large constants
+    rev = "ce65641354d98fc80912d5516b7fea87c344c2cc";
+    hash = "sha256-s+5JCO+pByPxUQJ+JIFlTnDHRzUtC1DrqwpW28ixSv8=";
+  }
   # 254100a9a003a16255a58eec3fa24168e6dc7124: RISC-V: typo: add closing paren to a comment
   # c1597e7fb9f9ecb9d7c33b5afa48031f284375de: RISC-V: Add conditional sqrt autovec pattern
   # 94a4b93292f8ab19910c844bb9b63e4a68b55d33: RISC-V: Part-1: Select suitable vector registers for vector type args and returns
@@ -527,8 +639,11 @@
   # 6aba1fa7a4ceaf66adc587da23834d1f317f871d: RISC-V: Add VLS mask modes mov patterns
   # f9cb357ae962ba2922b8507f4d96227780a063b9: RISC-V: Fix incorrect nregs calculation for VLS modes
   # a0e042d61dadc6bdcbeaa3b712b7a83415a12547: RISC-V: Suppress bogus warning for VLS types
-  # 0c37fef39fa0a8f77ea4fc67d1bbf5067d4bddb9: riscv: bitmanip: Remove duplicate zero_extendhi<GPR:mode>2 pattern
-
+  {
+    # riscv: bitmanip: Remove duplicate zero_extendhi<GPR:mode>2 pattern
+    rev = "0c37fef39fa0a8f77ea4fc67d1bbf5067d4bddb9";
+    hash = "sha256-ZuqggZO/s3+ZofP1xpyVzJSXKAL0htLMA9BHGmehdyY=";
+  }
   {
     # riscv: thead: Fix mode attribute for extension patterns
     rev = "0e25761b373f075a41d43b9462366a653dbf1121";
@@ -555,11 +670,11 @@
   # 4074aede45e3d8fbdb8fe28e1f084e869d3546f5: RISC-V: Add Types to Un-Typed Zicond Instructions
   # 25c30049f5896ef6312cf45a1c058ee3e3079e6a: RISC-V: Update Types for RISC-V Instructions
 
-  {
-    # RISC-V: Add Types to Un-Typed Thead Instructions
-    rev = "316d57da5bb9205b946afc56d78582fee874e4b5";
-    hash = "sha256-eqx7DW2CMBYE749mA+B05gCSZ/cA0/7OSQ6BmEEaTY4=";
-  }
+  # {
+  #   # RISC-V: Add Types to Un-Typed Thead Instructions
+  #   rev = "316d57da5bb9205b946afc56d78582fee874e4b5";
+  #   hash = "sha256-eqx7DW2CMBYE749mA+B05gCSZ/cA0/7OSQ6BmEEaTY4=";
+  # }
 
   # 721021a18e2ac004140ddd93113c11075ea890c6: RISC-V: enable muti push and pop for Zcmp when shrink-wrap-separate is ineffective
   # c1e4efd8ae3488c5a2c11ac42d4670b67e1f7bf4: RISC-V: Add vcreate intrinsics for RVV tuple types
@@ -653,11 +768,11 @@
   # b20e59f49b51b7baf05e1b727be5da947e617496: RISC-V: add static-pie support
   # 841668aa02a05deca06e68a5931408d970f5c8b2: RISC-V: Refine bswap16 auto vectorization code gen
 
-  {
-    # THead: Fix missing CFI directives for th.sdd in prologue.
-    rev = "578aa2f80056175b902671b30cc77e38945e3ba4";
-    hash = "sha256-Wt7sa/jJ66NSyzjTVsSO675M4CSEaPawMFLQ1y+lXWo=";
-  }
+  # {
+  #   # THead: Fix missing CFI directives for th.sdd in prologue.
+  #   rev = "578aa2f80056175b902671b30cc77e38945e3ba4";
+  #   hash = "sha256-Wt7sa/jJ66NSyzjTVsSO675M4CSEaPawMFLQ1y+lXWo=";
+  # }
 
   # dee55cf59ceea989f47e7605205c6644b27a1f78: RISC-V: Support movmisalign of RVV VLA modes
   # f8498436d6dd77f3c993e68536a3f6864793829c: RISC-V: Add initial pipeline description for an out-of-order core.
